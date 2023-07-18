@@ -1,16 +1,36 @@
 .root {
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
   padding: 18px 26px;
+  column-gap: 12px;
 
+  border-radius: 8px;
   transition: all 0.2s ease;
   background: #000;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.12), 0px 0px 0px 1px rgba(103, 110, 118, 0.16),
     0px 2px 5px 0px rgba(103, 110, 118, 0.08);
+
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+
+  @include breakpoint(desktop) {
+    column-gap: 10px;
+    font-size: 16px;
+    line-height: 24px;
+  }
   @include breakpoint(tablet) {
     padding: 14px 22px;
   }
   @include breakpoint(mobile-m) {
     padding: 12px 20px;
+    column-gap: 8px;
+    font-size: 14px;
+    line-height: 20px;
   }
   @include breakpoint(mobile) {
     padding: 10px 18px;
@@ -30,42 +50,11 @@
   }
 }
 
-.btnWrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 12px;
-  @include breakpoint(desktop) {
-    column-gap: 10px;
-  }
-  @include breakpoint(mobile-m) {
-    column-gap: 8px;
-  }
-}
-
 .icon {
   width: 24px;
   height: 24px;
   @include breakpoint(mobile-m) {
     width: 20px;
     height: 20px;
-  }
-}
-
-.text {
-  color: #fff;
-  text-align: center;
-
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 28px;
-  @include breakpoint(desktop) {
-    font-size: 16px;
-    line-height: 24px;
-  }
-  @include breakpoint(mobile-m) {
-    font-size: 14px;
-    line-height: 20px;
   }
 }

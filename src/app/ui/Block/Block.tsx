@@ -4,14 +4,12 @@ import { Button } from '@/app/ui/Button';
 
 import styles from './Block.module.scss';
 
-interface Button {
+interface Props {
   text: string;
 }
 
-interface Props {
-  button: Button;
-}
+export const Block: FC<Props> = ({ text }) => {
 
-export const Block: FC<Props> = ({ button }) => {
-  return <div className={styles.root}><Button button={button} /></div>;
+  const onClick = () => { };
+  return <div className={styles.root}><Button text={text} onClick={onClick} /></div>;
 }

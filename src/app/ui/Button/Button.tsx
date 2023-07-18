@@ -4,22 +4,17 @@ import { ArrowRight, Envelope } from '../shared/Icon';
 
 import styles from './Button.module.scss';
 
-interface Button {
-  text: string;
-}
-
 interface Props {
-  button: Button;
+  text: string;
+  onClick: () => void;
 }
 
-export const Button: FC<Props> = ({ button }) => {
+export const Button: FC<Props> = ({ text, onClick }) => {
   return (
-    <button className={styles.root}>
-      <div className={styles.btnWrap}>
-        <Envelope className={styles.icon} />
-        <div className={styles.text}>{button.text}</div>
-        <ArrowRight className={styles.icon} />
-      </div>
+    <button className={styles.root} onClick={onClick}>
+      <Envelope className={styles.icon} />
+      {text}
+      <ArrowRight className={styles.icon} />
     </button>
   )
 }
