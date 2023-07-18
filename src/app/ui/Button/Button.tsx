@@ -1,7 +1,5 @@
 import { FC } from 'react';
 
-import { button } from '@/app/feature/IndexPage/mock';
-
 import { ArrowRight, Envelope } from '../shared/Icon';
 
 import styles from './Button.module.scss';
