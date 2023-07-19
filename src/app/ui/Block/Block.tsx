@@ -7,10 +7,11 @@ import styles from './Block.module.scss';
 interface Props {
   text: string;
   color: any;
+  size: any;
 }
 
-export const Block: FC<Props> = ({ text, color }) => {
+export const Block: FC<Props> = ({ text, color, size }) => {
 
   const onClick = () => { };
-  return <div className={styles.root}><Button text={text} color={color} onClick={onClick} /></div>;
+  return <div className={styles.root}><Button text={text} color={color} size={size} onClick={onClick} /></div>;
 }
