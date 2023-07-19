@@ -7,13 +7,16 @@ import styles from './Button.module.scss';
 
 interface Props {
   text: string;
-  color: string;
+  color: '' | 'red' | 'blue';
   onClick: () => void;
 }
 
 export const Button: FC<Props> = ({ text, color, onClick }) => {
   return (
-    <button className={cn(styles.root, color !== '' && styles[color])} onClick={onClick}>
+    <button className={cn(styles.root,
+      color !== '' && styles[`color_${color}`]
+    )}
+      onClick={onClick}>
       <Envelope className={styles.icon} />
       {text}
       <ArrowRight className={styles.icon} />

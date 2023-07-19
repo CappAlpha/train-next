@@ -6,7 +6,7 @@ import styles from './Block.module.scss';
 
 interface Props {
   text: string;
-  color: string;
+  color: any;
 }
 
 export const Block: FC<Props> = ({ text, color }) => {
