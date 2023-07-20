@@ -1,25 +1,27 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
+import cn from 'classnames';
 
 import { ArrowRight, Envelope } from '../shared/Icon';
 
 import styles from './Button.module.scss';
 
-interface Button {
-  text: string;
-}
-
 interface Props {
-  button: Button;
+  children?: ReactNode;
+  color?: 'red' | 'blue';
+  size?: 'lg' | 'sm',
+  onClick: () => void;
 }
 
-export const Button: FC<Props> = ({ button }) => {
+export const Button: FC<Props> = ({ children = 'Кнопка', color, size, onClick }) => {
   return (
-    <button className={styles.root}>
-      <div className={styles.btnWrap}>
-        <Envelope className={styles.icon} />
-        <div className={styles.text}>{button.text}</div>
-        <ArrowRight className={styles.icon} />
-      </div>
-    </button>
-  )
-}
+    <button className={cn(styles.root,
+      color && styles[`color_${color}`],
+      size && styles[`size_${size}`]
+    )}
+      onClick={onClick}>
+      <Envelope className={styles.icon} />
+      {children}
+      <ArrowRight className={styles.icon} />
+    </button >
+  );
+};
