@@ -11,7 +11,7 @@ import styles from "./IndexPage.module.scss";
 export const IndexPage: FC = () => {
   return (
     <div className={styles.root}>
-      <Block text={button.text} color={button.color} size={button.size} />
+      <Block color={button.color} size={button.size} />
     </div>
   );
 };

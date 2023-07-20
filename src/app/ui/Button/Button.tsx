@@ -6,13 +6,13 @@ import { ArrowRight, Envelope } from '../shared/Icon';
 import styles from './Button.module.scss';
 
 interface Props {
-  text: string;
+  children?: string;
   color?: 'red' | 'blue';
   size?: 'lg' | 'sm',
   onClick: () => void;
 }
 
-export const Button: FC<Props> = ({ text, color, size, onClick }) => {
+export const Button: FC<Props> = ({ children, color, size, onClick }) => {
   return (
     <button className={cn(styles.root,
       color && styles[`color_${color}`],
@@ -20,8 +20,8 @@ export const Button: FC<Props> = ({ text, color, size, onClick }) => {
     )}
       onClick={onClick}>
       <Envelope className={styles.icon} />
-      {text}
+      {children}
       <ArrowRight className={styles.icon} />
     </button >
-  )
-}
+  );
+};
