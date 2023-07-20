@@ -15,7 +15,7 @@ export const Block: FC<Props> = ({ color, size }) => {
   return (
     <div className={styles.root}>
       <Button color={color} size={size} onClick={onClick}>
-        Button
+        {/* Test */}
       </Button>
     </div>
   );
