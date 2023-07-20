@@ -12,7 +12,7 @@ interface Props {
   onClick: () => void;
 }
 
-export const Button: FC<Props> = ({ children, color, size, onClick }) => {
+export const Button: FC<Props> = ({ children = ['Кнопка'], color, size, onClick }) => {
   return (
     <button className={cn(styles.root,
       color && styles[`color_${color}`],
@@ -20,7 +20,7 @@ export const Button: FC<Props> = ({ children, color, size, onClick }) => {
     )}
       onClick={onClick}>
       <Envelope className={styles.icon} />
-      {cn(typeof children !== 'string' && 'Кнопка', typeof children !== 'undefined' && `${children} `)}
+      {children}
       <ArrowRight className={styles.icon} />
     </button >
   );
